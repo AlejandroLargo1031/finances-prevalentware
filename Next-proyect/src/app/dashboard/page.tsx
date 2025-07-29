@@ -93,28 +93,31 @@ export default function DashboardWelcome() {
               <User className="h-6 w-6 text-primary" />
               <div>
                 <p className="text-sm text-muted-foreground">Rol</p>
-                <p className="font-medium capitalize">{user.role.toLowerCase()}</p>
+                <p className="font-medium capitalize">
+                  {user.role.toLowerCase()}
+                </p>
               </div>
             </div>
 
-            <div className="flex items-center space-x-4 p-4 border rounded-lg">
-              <Mail className="h-6 w-6 text-primary" />
-              <div>
+            <div className="flex items-start sm:items-center gap-4 p-4 border rounded-lg max-w-full">
+              <Mail className="h-6 w-6 text-primary shrink-0 mt-1 sm:mt-0" />
+              <div className="min-w-0">
                 <p className="text-sm text-muted-foreground">Correo</p>
-                <p className="font-medium">{user.email}</p>
+                <p className="font-medium break-words whitespace-normal">
+                  {user.email}
+                </p>
               </div>
             </div>
-
             {user.joinDate && (
               <div className="flex items-center space-x-4 p-4 border rounded-lg">
                 <CalendarDays className="h-6 w-6 text-primary" />
                 <div>
                   <p className="text-sm text-muted-foreground">Miembro desde</p>
                   <p className="font-medium">
-                    {new Date(user.joinDate).toLocaleDateString('es-ES', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric',
+                    {new Date(user.joinDate).toLocaleDateString("es-ES", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
                     })}
                   </p>
                 </div>
