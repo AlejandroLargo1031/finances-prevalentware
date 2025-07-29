@@ -148,9 +148,15 @@ export const AuthAdapter = {
   },
 
   async getSessionByToken(token: string){
-    return await prisma.session.findUnique({
+    const session = await prisma.session.findUnique({
       where: { token },
+      include: {
+        user: true,
+      },
     });
+
+    return session;
+  
   },
 
   async getUserById(id: string){

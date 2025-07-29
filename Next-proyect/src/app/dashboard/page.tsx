@@ -22,15 +22,15 @@ export default function DashboardWelcome() {
     const fetchUser = async () => {
       try {
         const token = localStorage.getItem('auth-token');
-        
-        if (!token) {
-          throw new Error('No se encontró el token de sesión');
+        const headers: HeadersInit = {};
+
+        if (token) {
+          headers['Authorization'] = `Bearer ${token}`;
         }
 
         const response = await fetch('/api/auth/me', {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          }
+          headers,
+          credentials: 'include', 
         });
 
         if (!response.ok) {
@@ -114,7 +114,7 @@ export default function DashboardWelcome() {
                     {new Date(user.joinDate).toLocaleDateString('es-ES', {
                       year: 'numeric',
                       month: 'long',
-                      day: 'numeric'
+                      day: 'numeric',
                     })}
                   </p>
                 </div>
