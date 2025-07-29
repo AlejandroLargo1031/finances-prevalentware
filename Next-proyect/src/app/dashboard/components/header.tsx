@@ -10,13 +10,13 @@ export function Header() {
   };
 
   return (
-    <header className="flex items-center justify-between p-4 border-b bg-white shadow-sm">
-      <h1 className="text-xl font-semibold">Dashboard</h1>
-      <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" onClick={handleLogout}>
-          <UserCircle className="h-6 w-6" />
-        </Button>
-      </div>
+    <header className="flex items-center justify-between px-6 py-3 border-b bg-white shadow-sm">
+      <h1 className="text-xl font-bold text-gray-800">Dashboard</h1>
+
+      <Button variant="ghost" onClick={handleLogout} className="flex items-center gap-2">
+        <UserCircle className="h-5 w-5 text-gray-700" />
+        <span className="hidden sm:inline">Cerrar sesión</span>
+      </Button>
     </header>
   );
 }

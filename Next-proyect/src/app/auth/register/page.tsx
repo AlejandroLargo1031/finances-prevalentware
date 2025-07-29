@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Laptop } from "lucide-react";
+
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
@@ -44,7 +46,8 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded-lg shadow-sm">
+    <>
+    <div className="max-w-md mx-auto mt-50 p-6 border rounded-lg shadow-sm">
       <h1 className="text-2xl font-bold text-center mb-6">Crear cuenta</h1>
 
       {error && (
@@ -90,12 +93,8 @@ export default function RegisterPage() {
           />
         </div>
 
-        <Button
-          type="submit"
-          className="w-full"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Registrando...' : 'Registrarse'}
+        <Button type="submit" className="w-full" disabled={isLoading}>
+          {isLoading ? "Registrando..." : "Registrarse"}
         </Button>
       </form>
 
@@ -108,6 +107,17 @@ export default function RegisterPage() {
           Iniciar sesión
         </Link>
       </div>
+      
     </div>
+    <div className="mt-8 text-center text-xs text-muted-foreground">
+    <div className="flex items-center justify-center space-x-2">
+      <Laptop className="w-4 h-4" />
+      <span className="font-semibold text-gray-700">
+        By Alejandro Largo
+      </span>
+      <Laptop className="w-4 h-4" />
+    </div>
+    <p className="text-[11px] mt-1">Fullstack Developer</p>
+  </div></>
   );
 }
