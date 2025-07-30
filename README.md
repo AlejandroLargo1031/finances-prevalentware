@@ -1,6 +1,15 @@
 # finances-prevalentware
 Sistema de Gestión de Ingresos y Egresos - Fullstack Esta es una aplicación web fullstack desarrollada como parte de una prueba técnica para el cargo de Desarrollador Fullstack en PrevalentWare. El sistema permite gestionar ingresos y egresos financieros, administrar usuarios, y generar reportes visuales y descargables.
 
+## Pruebas de ingreso 
+alejandro@exam.com
+password: 1234567
+User = ADMIN
+
+juan@exam.com
+password: 1234567
+User = USER
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
